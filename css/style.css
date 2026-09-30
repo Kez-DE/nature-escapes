@@ -1,0 +1,162 @@
+/* Nature Escapes - one stylesheet shared by all three pages */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #1f2a24;
+  background-color: #f4f1ea;
+}
+
+/* Skip link: hidden above the page, slides in only on keyboard focus */
+.skip {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: #ffd166;
+  color: #1b4332;
+  font-weight: bold;
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+header {
+  padding: 1.5rem 1rem 0.5rem;
+  background-color: #1b4332;
+  color: #ffffff;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin: 0.25rem 0 1rem;
+}
+
+/* Navigation: flex row of pill-shaped links */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0 0 1rem;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus,
+nav a[aria-current="page"] {
+  background-color: #ffffff;
+  color: #1b4332;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h2 {
+  color: #1b4332;
+}
+
+/* Box model on every image: border + padding + rounded corners */
+img {
+  max-width: 100%;
+  height: auto;
+  padding: 6px;
+  border: 3px solid #2d6a4f;
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover: image lifts, tilts, and casts a shadow */
+img:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+}
+
+/* Grid page: three equal columns */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Flex page: wrapping row of photos */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.flex img {
+  width: 300px;
+}
+
+/* Every other photo gets a leaf-shaped corner and a warm border */
+.flex img:nth-child(even) {
+  border-color: #b5651d;
+  border-radius: 50px 4px;
+}
+
+footer {
+  padding: 1rem;
+  background-color: #1b4332;
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer a {
+  color: #ffd166;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
